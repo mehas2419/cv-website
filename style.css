@@ -303,6 +303,13 @@ ul {
     background-clip: text;
 }
 
+.hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
 .scroll-down {
     position: absolute;
     bottom: 2rem;
