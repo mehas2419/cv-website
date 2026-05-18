@@ -174,11 +174,6 @@ ul {
     font-weight: 400;
 }
 
-.hero-subtitle .typed-text {
-    color: var(--primary-color);
-    font-weight: 600;
-}
-
 .hero-tagline {
     color: var(--secondary-color);
     font-size: 1.2rem;

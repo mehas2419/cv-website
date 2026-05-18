@@ -156,36 +156,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// ============= TYPING EFFECT =============
-const typedText = document.querySelector('.typed-text');
-const words = ['Researcher', 'Biotechnologist', 'Innovator', 'Scientist'];
-let wordIndex = 0;
-let charIndex = 0;
-let isDeleting = false;
 
-function typeEffect() {
-    const currentWord = words[wordIndex];
-    
-    if (isDeleting) {
-        typedText.textContent = currentWord.substring(0, charIndex - 1);
-        charIndex--;
-    } else {
-        typedText.textContent = currentWord.substring(0, charIndex + 1);
-        charIndex++;
-    }
-    
-    if (!isDeleting && charIndex === currentWord.length) {
-        setTimeout(() => { isDeleting = true; }, 2000);
-    } else if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        wordIndex = (wordIndex + 1) % words.length;
-    }
-    
-    const speed = isDeleting ? 50 : 100;
-    setTimeout(typeEffect, speed);
-}
-
-typeEffect();
 
 // ============= BLOG FUNCTIONALITY =============
 const blogTitle = document.getElementById('blog-title');
