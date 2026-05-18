@@ -121,7 +121,7 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-document.querySelectorAll('.timeline-item, .skill-card, .cert-card, .interest-item, .contact-item').forEach(el => {
+document.querySelectorAll('.timeline-item, .skill-category, .research-card, .project-card, .cert-card, .contact-item').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(30px)';
     el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
@@ -187,20 +187,51 @@ function typeEffect() {
 
 typeEffect();
 
-// ============= LANGUAGE BARS ANIMATION =============
-const languageBars = document.querySelectorAll('.language-bar');
+// ============= BLOG FUNCTIONALITY =============
+const blogTitle = document.getElementById('blog-title');
+const blogContent = document.getElementById('blog-content');
+const blogSave = document.getElementById('blog-save');
+const blogPosts = document.getElementById('blog-posts');
 
-const barObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const width = entry.target.style.width;
-            entry.target.style.width = '0';
-            setTimeout(() => {
-                entry.target.style.transition = 'width 1.5s ease';
-                entry.target.style.width = width;
-            }, 200);
-        }
+function loadPosts() {
+    const posts = JSON.parse(localStorage.getItem('blogPosts') || '[]');
+    blogPosts.innerHTML = '';
+    if (posts.length === 0) {
+        blogPosts.innerHTML = '<p class="blog-empty">No posts yet. Write your first learning log above!</p>';
+        return;
+    }
+    posts.reverse().forEach((post, index) => {
+        const postEl = document.createElement('div');
+        postEl.className = 'blog-post';
+        postEl.innerHTML = `
+            <h4>${post.title}</h4>
+            <span class="blog-date">${post.date}</span>
+            <p>${post.content}</p>
+            <button class="blog-delete" data-index="${posts.length - 1 - index}"><i class="fas fa-trash"></i> Delete</button>
+        `;
+        blogPosts.appendChild(postEl);
     });
-}, { threshold: 0.5 });
+    document.querySelectorAll('.blog-delete').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const idx = parseInt(this.dataset.index);
+            const posts = JSON.parse(localStorage.getItem('blogPosts') || '[]');
+            posts.splice(idx, 1);
+            localStorage.setItem('blogPosts', JSON.stringify(posts));
+            loadPosts();
+        });
+    });
+}
 
-languageBars.forEach(bar => barObserver.observe(bar));
+blogSave.addEventListener('click', () => {
+    const title = blogTitle.value.trim();
+    const content = blogContent.value.trim();
+    if (!title || !content) return;
+    const posts = JSON.parse(localStorage.getItem('blogPosts') || '[]');
+    posts.push({ title, content, date: new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) });
+    localStorage.setItem('blogPosts', JSON.stringify(posts));
+    blogTitle.value = '';
+    blogContent.value = '';
+    loadPosts();
+});
+
+loadPosts();
