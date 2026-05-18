@@ -1,34 +1,374 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-<title>My CV</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Meha - Medical Biotechnology Student & Researcher specializing in 3D Bioprinting and Regenerative Medicine">
+    <meta name="keywords" content="Meha, Biotechnology, 3D Bioprinting, Research, Regenerative Medicine">
+    <meta name="author" content="Meha">
+    <meta property="og:title" content="Meha | Portfolio">
+    <meta property="og:description" content="Medical Biotechnology Student & Researcher">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mehamed.netlify.app">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>Meha | Portfolio</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
 
-<div class="container">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">Meha<span>.</span></a>
+            <div class="nav-toggle" id="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#certifications" class="nav-link">Certifications</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
 
-<h1>Your Name</h1>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h3>Hello, I'm</h3>
+                <h1 class="hero-title">Meha</h1>
+                <h2 class="hero-subtitle">Medical Biotechnology Student & <span class="typed-text">Researcher</span></h2>
+                <p class="hero-description">Passionate about 3D bioprinting, regenerative medicine, and computational biology. Currently pursuing my Bachelor's degree while conducting cutting-edge research in hydrogel-based cell constructs.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                    <a href="#about" class="btn btn-secondary">Explore More</a>
+                </div>
+                <div class="hero-socials">
+                    <a href="https://github.com/mehas2419" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
+                    <a href="mailto:meha@tuta.com" class="social-link"><i class="fas fa-envelope"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-img-wrapper">
+                    <div class="hero-img-placeholder">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="#about" class="scroll-down">
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </section>
 
-<p>Medical Biotechnology Student</p>
+    <!-- About Section -->
+    <section class="section about" id="about">
+        <div class="section-container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Medical Biotechnology Undergraduate</h3>
+                    <p>I am a dedicated Medical Biotechnology student at the University of Madras, expected to graduate in 2027. My research focuses on 3D bioprinting of hydrogel-based cell constructs, with applications in regenerative medicine and tissue engineering.</p>
+                    <p>Through my undergraduate research at University of Madras, I have gained hands-on experience in bioprinting technologies, cell culture techniques, and biomaterials development. I hold certifications from IIT Madras and MIT Professional Education in advanced bioprinting and DNA nanotechnology.</p>
+                    <div class="about-info">
+                        <div class="info-item">
+                            <span class="info-label">Name:</span>
+                            <span class="info-value">Meha</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Email:</span>
+                            <span class="info-value">meha@tuta.com</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Location:</span>
+                            <span class="info-value">United States</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Degree:</span>
+                            <span class="info-value">Bachelors in Medical Biotechnology</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Graduation:</span>
+                            <span class="info-value">Expected 2027</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<h2>About Me</h2>
+    <!-- Experience Section -->
+    <section class="section experience" id="experience">
+        <div class="section-container">
+            <h2 class="section-title">Research Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">Jan 2024 - Oct 2025</div>
+                    <div class="timeline-content">
+                        <h3>Undergraduate Research Student</h3>
+                        <h4>University of Madras, Chennai, India</h4>
+                        <p class="timeline-description">Conducting research on 3D bioprinting of hydrogel-based cell constructs. Focused on developing alginate-gelatin-based hydrogels for tissue engineering applications.</p>
+                        <ul class="timeline-list">
+                            <li>3D Bioprinting Research Project</li>
+                            <li>Developed hydrogel-based cell constructs for tissue engineering</li>
+                            <li>Worked with alginate-gelatin-based hydrogels</li>
+                            <li>Applied principles of bioprinting and bioink design</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<p>I am interested in biotechnology and research.</p>
+    <!-- Skills Section -->
+    <section class="section skills" id="skills">
+        <div class="section-container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fas fa-flask"></i></div>
+                    <h3>Laboratory Techniques</h3>
+                    <ul class="skill-list">
+                        <li>PCR & DNA Extraction</li>
+                        <li>DNA Sequencing</li>
+                        <li>Gel Electrophoresis</li>
+                        <li>Cell Culture</li>
+                        <li>Aseptic Techniques</li>
+                        <li>Microbial Culture</li>
+                        <li>Microscopy</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fas fa-chart-bar"></i></div>
+                    <h3>Data Analysis</h3>
+                    <ul class="skill-list">
+                        <li>SPSS</li>
+                        <li>Data Collection & Cleaning</li>
+                        <li>Data Management</li>
+                        <li>Statistical Analysis</li>
+                        <li>Research Documentation</li>
+                        <li>Data Visualization</li>
+                        <li>Data Reporting & Entry</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fas fa-laptop-code"></i></div>
+                    <h3>Tools & Technologies</h3>
+                    <ul class="skill-list">
+                        <li>MS Office Suite</li>
+                        <li>Google Workspace</li>
+                        <li>Python Programming</li>
+                        <li>HTML & CSS</li>
+                        <li>3D Bioprinting Software</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fas fa-users"></i></div>
+                    <h3>Soft Skills</h3>
+                    <ul class="skill-list">
+                        <li>Critical Thinking</li>
+                        <li>Complex Problem Solving</li>
+                        <li>Active Learning</li>
+                        <li>Analytical Reasoning</li>
+                        <li>Time Management</li>
+                        <li>Adaptability</li>
+                        <li>Collaborative Communication</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="languages-section">
+                <h3>Languages</h3>
+                <div class="languages-grid">
+                    <div class="language-item">
+                        <span class="language-name">Tamil</span>
+                        <div class="language-level">
+                            <div class="language-bar" style="width: 100%"></div>
+                        </div>
+                        <span class="language-percent">Fluent</span>
+                    </div>
+                    <div class="language-item">
+                        <span class="language-name">English</span>
+                        <div class="language-level">
+                            <div class="language-bar" style="width: 100%"></div>
+                        </div>
+                        <span class="language-percent">Fluent</span>
+                    </div>
+                    <div class="language-item">
+                        <span class="language-name">Telugu</span>
+                        <div class="language-level">
+                            <div class="language-bar" style="width: 70%"></div>
+                        </div>
+                        <span class="language-percent">Intermediate</span>
+                    </div>
+                    <div class="language-item">
+                        <span class="language-name">Hindi</span>
+                        <div class="language-level">
+                            <div class="language-bar" style="width: 70%"></div>
+                        </div>
+                        <span class="language-percent">Intermediate</span>
+                    </div>
+                    <div class="language-item">
+                        <span class="language-name">Kannada</span>
+                        <div class="language-level">
+                            <div class="language-bar" style="width: 40%"></div>
+                        </div>
+                        <span class="language-percent">Beginner</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<h2>Skills</h2>
+    <!-- Certifications Section -->
+    <section class="section certifications" id="certifications">
+        <div class="section-container">
+            <h2 class="section-title">Certifications & Courses</h2>
+            <div class="cert-grid">
+                <div class="cert-card">
+                    <div class="cert-icon"><i class="fas fa-certificate"></i></div>
+                    <h3>IIT Madras</h3>
+                    <p class="cert-title">Introduction to 3D Bioprinting</p>
+                    <span class="cert-date">Jan 2025</span>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon"><i class="fas fa-certificate"></i></div>
+                    <h3>IIT Madras</h3>
+                    <p class="cert-title">Bioprinting: Principles and Applications</p>
+                    <span class="cert-date">Nov 2025</span>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <h3>MIT Professional Education</h3>
+                    <p class="cert-title">DNA Nanotechnology</p>
+                    <span class="cert-date">Nov 2025</span>
+                </div>
+            </div>
+            <div class="courses-list">
+                <h3>Relevant Coursework</h3>
+                <div class="course-tags">
+                    <span class="course-tag">Fundamentals of Bioprinting</span>
+                    <span class="course-tag">Fundamentals of Bioink Design</span>
+                    <span class="course-tag">Introduction to Bioprinting</span>
+                    <span class="course-tag">Bioprinting: Principles and Applications</span>
+                    <span class="course-tag">DNA Nanotechnology</span>
+                    <span class="course-tag">Stem Cell Basics</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<ul>
-<li>Python</li>
-<li>HTML</li>
-<li>CSS</li>
-</ul>
+    <!-- Interests Section -->
+    <section class="section interests" id="interests">
+        <div class="section-container">
+            <h2 class="section-title">Research Interests</h2>
+            <div class="interests-grid">
+                <div class="interest-item">
+                    <i class="fas fa-print"></i>
+                    <span>3D Bioprinting</span>
+                </div>
+                <div class="interest-item">
+                    <i class="fas fa-heartbeat"></i>
+                    <span>Regenerative Medicine</span>
+                </div>
+                <div class="interest-item">
+                    <i class="fas fa-dna"></i>
+                    <span>Tissue Engineering</span>
+                </div>
+                <div class="interest-item">
+                    <i class="fas fa-microscope"></i>
+                    <span>Stem Cell Research</span>
+                </div>
+                <div class="interest-item">
+                    <i class="fas fa-pills"></i>
+                    <span>Drug Delivery Systems</span>
+                </div>
+                <div class="interest-item">
+                    <i class="fas fa-ribbon"></i>
+                    <span>Cancer Biology</span>
+                </div>
+                <div class="interest-item">
+                    <i class="fas fa-laptop"></i>
+                    <span>Computational Biology</span>
+                </div>
+                <div class="interest-item">
+                    <i class="fas fa-database"></i>
+                    <span>Data Science</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-</div>
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+        <div class="section-container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <a href="mailto:meha@tuta.com">meha@tuta.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Phone</h4>
+                            <span>+1 (000) 000-0000</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Location</h4>
+                            <span>United States</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>GitHub</h4>
+                            <a href="https://github.com/mehas2419" target="_blank">github.com/mehas2419</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-socials">
+                <a href="https://github.com/mehas2419" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="mailto:meha@tuta.com"><i class="fas fa-envelope"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <p>&copy; 2026 Meha. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
 </body>
-
 </html>
-==
