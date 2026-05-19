@@ -158,8 +158,9 @@ ul {
 }
 
 .hero-title {
-    font-size: 4rem;
-    font-weight: 800;
+    font-size: 4.5rem;
+    font-weight: 700;
+    font-family: 'Dancing Script', cursive;
     background: var(--gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
