@@ -5,12 +5,12 @@ particlesJS('particles-js', {
             value: 80,
             density: { enable: true, value_area: 800 }
         },
-        color: { value: '#ff4d9e' },
+        color: { value: '#8B5E3C' },
         shape: { type: 'circle' },
         opacity: {
-            value: 0.5,
+            value: 0.3,
             random: true,
-            anim: { enable: true, speed: 1, opacity_min: 0.1 }
+            anim: { enable: true, speed: 1, opacity_min: 0.05 }
         },
         size: {
             value: 3,
@@ -20,7 +20,7 @@ particlesJS('particles-js', {
         line_linked: {
             enable: true,
             distance: 150,
-            color: '#ff4d9e',
+            color: '#8B5E3C',
             opacity: 0.2,
             width: 1
         },
