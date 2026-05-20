@@ -1,13 +1,13 @@
 /* ============= VARIABLES ============= */
 :root {
-    --primary-color: #d09fa9;
-    --secondary-color: #c08290;
-    --bg-dark: #fef4f5;
-    --bg-card: rgba(208, 159, 169, 0.06);
-    --bg-card-hover: rgba(208, 159, 169, 0.1);
-    --text-primary: #3d2c2e;
-    --text-secondary: #6b4a50;
-    --border-color: rgba(208, 159, 169, 0.15);
+    --primary-color: #8db580;
+    --secondary-color: #d4a8b8;
+    --bg-dark: #f5f7f2;
+    --bg-card: rgba(141, 181, 128, 0.06);
+    --bg-card-hover: rgba(141, 181, 128, 0.1);
+    --text-primary: #3a3132;
+    --text-secondary: #6b5358;
+    --border-color: rgba(141, 181, 128, 0.15);
     --shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
     --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     --font-main: 'Poppins', sans-serif;
@@ -66,7 +66,7 @@ ul {
     width: 100%;
     padding: 1rem 0;
     z-index: 1000;
-    background: rgba(254, 244, 245, 0.9);
+    background: rgba(245, 247, 242, 0.9);
     backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border-color);
     transition: var(--transition);
@@ -215,7 +215,7 @@ ul {
 
 .btn-primary:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(208, 159, 169, 0.3);
+    box-shadow: 0 10px 30px rgba(141, 181, 128, 0.3);
 }
 
 .btn-secondary {
