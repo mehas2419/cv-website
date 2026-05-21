@@ -54,6 +54,15 @@ const navMenu = document.getElementById('nav-menu');
 const navLinks = document.querySelectorAll('.nav-link');
 const navbar = document.querySelector('.navbar');
 
+// Set active link based on current page
+const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+navLinks.forEach(link => {
+    const href = link.getAttribute('href');
+    if (href === currentPage) {
+        link.classList.add('active');
+    }
+});
+
 // Toggle mobile menu
 navToggle.addEventListener('click', () => {
     navMenu.classList.toggle('active');
@@ -71,30 +80,6 @@ navLinks.forEach(link => {
         icon.classList.remove('fa-times');
     });
 });
-
-// Active link on scroll
-const sections = document.querySelectorAll('section[id]');
-
-function setActiveLink() {
-    const scrollY = window.scrollY + 100;
-    
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.offsetHeight;
-        const sectionId = section.getAttribute('id');
-        
-        if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${sectionId}`) {
-                    link.classList.add('active');
-                }
-            });
-        }
-    });
-}
-
-window.addEventListener('scroll', setActiveLink);
 
 // Navbar background on scroll
 window.addEventListener('scroll', () => {
@@ -140,69 +125,53 @@ document.addEventListener('styleLoaded', () => {
 });
 document.dispatchEvent(new Event('styleLoaded'));
 
-// ============= SMOOTH SCROLL =============
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        if (targetId === '#') return;
-        const target = document.querySelector(targetId);
-        if (target) {
-            window.scrollTo({
-                top: target.offsetTop - 80,
-                behavior: 'smooth'
-            });
-        }
-    });
-});
-
-
-
 // ============= BLOG FUNCTIONALITY =============
 const blogTitle = document.getElementById('blog-title');
 const blogContent = document.getElementById('blog-content');
 const blogSave = document.getElementById('blog-save');
 const blogPosts = document.getElementById('blog-posts');
 
-function loadPosts() {
-    const posts = JSON.parse(localStorage.getItem('blogPosts') || '[]');
-    blogPosts.innerHTML = '';
-    if (posts.length === 0) {
-        blogPosts.innerHTML = '<p class="blog-empty">No posts yet. Write your first learning log above!</p>';
-        return;
-    }
-    posts.reverse().forEach((post, index) => {
-        const postEl = document.createElement('div');
-        postEl.className = 'blog-post';
-        postEl.innerHTML = `
-            <h4>${post.title}</h4>
-            <span class="blog-date">${post.date}</span>
-            <p>${post.content}</p>
-            <button class="blog-delete" data-index="${posts.length - 1 - index}"><i class="fas fa-trash"></i> Delete</button>
-        `;
-        blogPosts.appendChild(postEl);
-    });
-    document.querySelectorAll('.blog-delete').forEach(btn => {
-        btn.addEventListener('click', function() {
-            const idx = parseInt(this.dataset.index);
-            const posts = JSON.parse(localStorage.getItem('blogPosts') || '[]');
-            posts.splice(idx, 1);
-            localStorage.setItem('blogPosts', JSON.stringify(posts));
-            loadPosts();
+if (blogSave) {
+    function loadPosts() {
+        const posts = JSON.parse(localStorage.getItem('blogPosts') || '[]');
+        blogPosts.innerHTML = '';
+        if (posts.length === 0) {
+            blogPosts.innerHTML = '<p class="blog-empty">No posts yet. Write your first learning log above!</p>';
+            return;
+        }
+        posts.reverse().forEach((post, index) => {
+            const postEl = document.createElement('div');
+            postEl.className = 'blog-post';
+            postEl.innerHTML = `
+                <h4>${post.title}</h4>
+                <span class="blog-date">${post.date}</span>
+                <p>${post.content}</p>
+                <button class="blog-delete" data-index="${posts.length - 1 - index}"><i class="fas fa-trash"></i> Delete</button>
+            `;
+            blogPosts.appendChild(postEl);
         });
+        document.querySelectorAll('.blog-delete').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const idx = parseInt(this.dataset.index);
+                const posts = JSON.parse(localStorage.getItem('blogPosts') || '[]');
+                posts.splice(idx, 1);
+                localStorage.setItem('blogPosts', JSON.stringify(posts));
+                loadPosts();
+            });
+        });
+    }
+
+    blogSave.addEventListener('click', () => {
+        const title = blogTitle.value.trim();
+        const content = blogContent.value.trim();
+        if (!title || !content) return;
+        const posts = JSON.parse(localStorage.getItem('blogPosts') || '[]');
+        posts.push({ title, content, date: new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) });
+        localStorage.setItem('blogPosts', JSON.stringify(posts));
+        blogTitle.value = '';
+        blogContent.value = '';
+        loadPosts();
     });
-}
 
-blogSave.addEventListener('click', () => {
-    const title = blogTitle.value.trim();
-    const content = blogContent.value.trim();
-    if (!title || !content) return;
-    const posts = JSON.parse(localStorage.getItem('blogPosts') || '[]');
-    posts.push({ title, content, date: new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) });
-    localStorage.setItem('blogPosts', JSON.stringify(posts));
-    blogTitle.value = '';
-    blogContent.value = '';
     loadPosts();
-});
-
-loadPosts();
+}
