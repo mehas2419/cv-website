@@ -1,12 +1,12 @@
 /* ============= VARIABLES ============= */
 :root {
-    --primary-color: #D63384;
-    --secondary-color: #F472B6;
+    --primary-color: #1E3A8A;
+    --secondary-color: #06B6D4;
     --bg-color: #FFFFFF;
     --bg-card: #F3F4F6;
     --bg-card-hover: #E5E7EB;
-    --text-primary: #BE185D;
-    --text-secondary: #F472B6;
+    --text-primary: #111827;
+    --text-secondary: #4B5563;
     --border-color: #E5E7EB;
     --shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     --gradient: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
@@ -215,7 +215,7 @@ ul {
 
 .btn-primary:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(214, 51, 132, 0.3);
+    box-shadow: 0 10px 30px rgba(6, 182, 212, 0.3);
 }
 
 .btn-secondary {
@@ -225,7 +225,7 @@ ul {
 }
 
 .btn-secondary:hover {
-    background: rgba(214, 51, 132, 0.1);
+    background: rgba(6, 182, 212, 0.1);
     transform: translateY(-3px);
 }
 
