@@ -160,7 +160,7 @@ ul {
 .hero-title {
     font-size: 4.5rem;
     font-weight: 700;
-    font-family: 'Marhey', cursive;
+    font-family: Arial, sans-serif;
     background: var(--gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
